@@ -12,7 +12,6 @@ class Weather:
             url = f"https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={apikey}&units=metric"
             r = requests.get(url)
             self.data = r.json()
-            #print(self.data)
         elif lat and lon:
             url = f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={apikey}&units=metric"
             r = requests.get(url)
@@ -33,4 +32,10 @@ class Weather:
             dicty['main']['temp'], dicty['weather'][0]['description']))
         return simpledata
 
+    def getweathericon(self):
+        simpledata = []
+        for item in self.data["list"][:4]:
+            icon_value = item["weather"][0]["icon"]
+            simpledata.append(icon_value)
+        return simpledata
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sunny Day Weather App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Sunny Day Weather App</h1>
+        <form action="/" method="post">
+            <p>Please give include the following detail </p>
+            {{ form.city.label }}
+            <br>
+            {{ form.city }}
+            <br>
+            {{ form.apikey.label }}
+            <br>
+            {{ form.apikey }}
+            <br>
+            {{ form.latitude.label }}
+            <br>
+            {{ form.latitude }}
+            <br>
+            {{ form.longitude.label }}
+            <br>
+            {{ form.longitude }}
+            <br>
+            {{form.button}}
+        </form>
+    </div>
+</body>
+</html>

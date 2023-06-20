@@ -39,3 +39,4 @@ class Weather:
             simpledata.append(icon_value)
         return simpledata
 
+
